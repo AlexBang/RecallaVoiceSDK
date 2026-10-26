@@ -1,7 +1,7 @@
 // swift-tools-version: 6.2
 import PackageDescription
 
-let release = "0.1.1"
+let release = "0.1.2"
 let baseURL = "https://github.com/AlexBang/RecallaVoiceSDK/releases/download/\(release)"
 
 let package = Package(
@@ -19,12 +19,12 @@ let package = Package(
         .binaryTarget(
             name: "RecallaVoiceSDK",
             url: "\(baseURL)/RecallaVoiceSDK.xcframework.zip",
-            checksum: "dec52e2d367ee1b80c2a715214fb739a55a4d392747b03578dc51ba7fa20400f"
+            checksum: "c386803260836c357506edf2561d43022295dcd323d3095784a13186a6f8a404"
         ),
         .binaryTarget(
             name: "onnxruntime",
             url: "\(baseURL)/onnxruntime.xcframework.zip",
-            checksum: "59e899880a3b7fa8a2994d8f92d4fe120c4fbf555c190e642686e2e5996b4c95"
+            checksum: "232aa995aef03bd75f95327f7ccf44ae442a5ab1dc6d823f4517edbd6f9571c8"
         )
     ]
 )
