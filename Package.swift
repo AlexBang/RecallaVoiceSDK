@@ -1,7 +1,7 @@
 // swift-tools-version: 6.2
 import PackageDescription
 
-let release = "0.1.2"
+let release = "0.1.3"
 let baseURL = "https://github.com/AlexBang/RecallaVoiceSDK/releases/download/\(release)"
 
 let package = Package(
@@ -14,17 +14,27 @@ let package = Package(
         .target(
             name: "RecallaVoiceSDKPackage",
             dependencies: ["RecallaVoiceSDK", "onnxruntime"],
-            linkerSettings: [.linkedLibrary("c++")]
+            linkerSettings: [
+                .linkedLibrary("c++"),
+                .linkedFramework("Foundation"),
+                .linkedFramework("CoreML"),
+                .linkedFramework("Accelerate"),
+                .linkedFramework("Security"),
+                .linkedFramework("CoreGraphics"),
+                .linkedFramework("CoreVideo"),
+                .linkedFramework("Metal"),
+                .linkedFramework("QuartzCore")
+            ]
         ),
         .binaryTarget(
             name: "RecallaVoiceSDK",
             url: "\(baseURL)/RecallaVoiceSDK.xcframework.zip",
-            checksum: "c386803260836c357506edf2561d43022295dcd323d3095784a13186a6f8a404"
+            checksum: "4724defc7779cbf54d14a2e62e7e2575d795c4caf6cc1a0f4721e1e62af1de72"
         ),
         .binaryTarget(
             name: "onnxruntime",
             url: "\(baseURL)/onnxruntime.xcframework.zip",
-            checksum: "232aa995aef03bd75f95327f7ccf44ae442a5ab1dc6d823f4517edbd6f9571c8"
+            checksum: "762b2bc5a0a6f75b05fd047bb1275529e6c9bb05acf3c14e0c836bf39f2066b9"
         )
     ]
 )
