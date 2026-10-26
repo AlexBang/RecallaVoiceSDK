@@ -1,0 +1,6 @@
+.DS_Store
+DerivedData/
+.build/
+build/
+release-assets/
+test-output/
